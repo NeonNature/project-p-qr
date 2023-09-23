@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+    @apply h-full;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply flex items-center justify-center h-full;
+    background-color: #d5e1ef;
+}
+
+.card {
+    @apply flex items-center flex-col w-full text-center;
+    padding: 18px;
+    margin: 18px;
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+.card-qr {
+    border-radius: 15px;
+}
+
+.card-text-container {
+    @apply p-4;
+}
+
+.card-title {
+    @apply font-bold py-2;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.card-desc {
+    @apply py-2;
+    color: #969a9f;
+    font-size: 20px;
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 80vw;
+    }
 }
